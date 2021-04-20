@@ -125,6 +125,7 @@
 	{
 		width:100%;
 		padding-top:20px;
+		margin-bottom: 10%;
 	}
 	#score
 	{
@@ -132,12 +133,14 @@
 		float:left;
 		text-align:right;
 		font-size: x-large;
+		margin-bottom: 10%;
 	}
 	#clicks
 	{font-size: x-large;
 		width:48%;
 		float:right;
 		text-align:left;
+		margin-bottom: 10%;
 	}
 	.gameselect
 	{
@@ -190,10 +193,10 @@
 		innerw = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 		innerh = (window.innerHeight > 0) ? window.innerHeight : screen.height;
 		
-		if(innerw < innerh - 100)
-			lvl = Math.floor(innerw/40) - 1;
-		else	
-			lvl = Math.floor((innerh-100)/40) - 1;
+		// if(innerw < innerh - 100)
+		// 	lvl = Math.floor(innerw/40) - 1;
+		// else	
+		// 	lvl = Math.floor((innerh-100)/40) - 1;
 		
 		c = document.getElementById('clicks');
 		s = document.getElementById('score');
@@ -205,7 +208,7 @@
 		logo = document.getElementById("logo");
 		logo.onclick = restart;
 		
-		for(var l = 2; l < lvl + 1; l++)
+		for(var l = 2; l < 9; l++)
 		{
 			var level = document.createElement('div');
 			level.id = l;
@@ -247,7 +250,7 @@
 			}
 		}
 		lit = 0;		
-		ldiv.style.paddingTop = (innerh/2 - (imgwh * h)/2) - 30 + 'px';
+		ldiv.style.paddingTop = (innerh/2 - (imgwh * h)/2) +15 + 'px';
 		ldiv.style.paddingLeft = '5px';
 	}	
 	function gethex(x, y, color, lit, id)
@@ -324,6 +327,7 @@
         </div>
     </div>
     <div id="gameselect" class="gameselect">
+		
     </div>
     <div id="game" class="game">
         <div id="lights"></div>
@@ -333,9 +337,9 @@
 		</q> </p>  
 	<centre>	<button id="hide" class="button">Play again!</button>  </centre>
 		</dialog> 
-    <div id="footer">
+    <!-- <div id="footer">
     	Turn all Yellow. Click to toggle. Each click toggle adjacent lights.
-    </div> 
+    </div>  -->
 </div>
 </body>
 </html>
